@@ -39,3 +39,6 @@ jobs:
       - name: Docker Login
         run: docker login --username=${{ env.DOCKER_USERNAME }} --password-stdin <<< "${{ secrets.DOCKER_HUB_TOKEN }}"
       
+      - name: Docker Run
+        run: |-
+          docker run -d -p 8080:80 ${{ env.CONTAINER_REGISTRY }}/${{ env.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
