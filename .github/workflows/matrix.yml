@@ -15,7 +15,7 @@ jobs:
       run: docker info
 
     - name: Run Images
-      run: docker run "hello-world"
+      run: docker run "getdzidon/test-app:latest"
 
   deploy-on-windows:  
     runs-on: windows-latest
@@ -27,4 +27,4 @@ jobs:
         run: docker info
 
       - name: Run Images
-        run: docker run "hello-world"   
+        run: docker run "getdzidon/test-app:latest"   
