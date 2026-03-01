@@ -1,4 +1,4 @@
-name: Docker Workflow
+name: Concurrency Workflow
 
 on:
   push:
@@ -42,3 +42,4 @@ jobs:
       - name: Docker Run
         run: |-
           docker run -d -p 8080:80 ${{ env.CONTAINER_REGISTRY }}/${{ env.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
+          sleep 300s 
