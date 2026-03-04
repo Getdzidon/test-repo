@@ -7,8 +7,8 @@ on:
 jobs: 
   deploy:
     strategy: 
-    #   fail-fast: false # when a job fails, it will not affect successive jobs running in parallel. #remove this 👈
-      max-parallel: 3 # this means only three jobs will run parallelly. Once done, another three set will run in parallel. #remove this 👈
+      fail-fast: false # when a job fails, it will not affect successive jobs running in parallel.
+      max-parallel: 2 # this means only three jobs will run parallelly. Once done, another three set will run in parallel. 
       matrix: 
         os: [ubuntu-latest, ubuntu-20.04, windows-latest]
         images: [hello-world, alpine]
