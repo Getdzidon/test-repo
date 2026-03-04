@@ -26,7 +26,7 @@ jobs:
         run: docker login --username=${{ env.DOCKER_USERNAME }} --password-stdin <<< "${{ secrets.DOCKER_HUB_TOKEN }}"
       
       - name: Docker Publish
-        run: docker push ${{ env.CONTAINER_REGISTRY }}/${{ env.DOCKER_USERNAME }}/${{ env.IMAGE_NAM }}:latest
+        run: docker push ${{ env.CONTAINER_REGISTRY }}/${{ env.DOCKER_USERNAME }}/${{ env.IMAGE_NAME }}:latest
   
   deploy:
     needs: docker
