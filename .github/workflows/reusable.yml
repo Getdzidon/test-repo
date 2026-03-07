@@ -1,0 +1,27 @@
+name: Deployment Workflow
+
+on:
+  workflow_call:
+    inputs:
+      environment:
+        required: true
+        type: string
+        default: 'production'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check Out Code
+        uses: actions/checkout@v6
+
+      - name: Deploy Application
+        run: |
+          echo "Deploying to ${{ inputs.environment }} environment"
+      
+      - name: Run tests
+        run: |
+          npm audit
+
+
